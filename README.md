@@ -39,6 +39,9 @@ python -m http.server           # http://localhost:8000
 
 ## 구성
 
+기획서 수치를 다시 계산하는 스크립트는 `scripts/analysis/`에 있습니다.
+
+
 ```
 index.html            화면, 필터, 규칙 기반 자연어 파서 (프레임워크·빌드 도구 없음)
 courses.json          가공된 강좌 데이터

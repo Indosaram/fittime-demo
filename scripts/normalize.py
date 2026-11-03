@@ -11,8 +11,9 @@ def to_utf8(name):
             try: txt = raw.decode(enc); break
             except UnicodeDecodeError: pass
         open(dst, 'w', encoding='utf-8').write(txt)
-for n in ('pool_courses.csv', 'olsports_courses.csv', 'ilsan_courses.csv', 'bundang_courses.csv'):
-    to_utf8(n)
+for n in sorted(os.listdir(D)):
+    if n.endswith('.csv') and not n.startswith('u_') and n != 'unified_courses.csv':
+        to_utf8(n)
 def ld(f): return pd.read_csv(D+f, dtype=str)
 P=ld('u_pool_courses.csv'); O=ld('u_olsports_courses.csv'); I=ld('u_ilsan_courses.csv'); B=ld('u_bundang_courses.csv')
 def norm(df, center, m):
